@@ -38,7 +38,7 @@ function Login() {
             return;
         }
 
-        axios.post("http://localhost:3002/login", { email, password })
+        axios.post("https://crud-client-five.vercel.app/login", { email, password })
             .then(res => {
                 if (res.data.Status === "Success") {
                     if (res.data.role === "admin") {

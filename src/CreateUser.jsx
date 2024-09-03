@@ -37,7 +37,7 @@ function CreateUser() {
         formData.append('age', age);
         formData.append('image', image); // Append image file
 
-        axios.post("http://localhost:3002/createUser", formData, {
+        axios.post("https://crud-client-five.vercel.app/createUser", formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
