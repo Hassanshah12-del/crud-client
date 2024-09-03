@@ -6,7 +6,7 @@ function Users() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3002')
+        axios.get('https://crud-server-roan.vercel.app')
             .then(result => setUsers(result.data))
             .catch(err => console.log(err));
     }, []);
