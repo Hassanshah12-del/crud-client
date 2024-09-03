@@ -30,7 +30,7 @@ function RegisterUser() {
             return;
         }
 
-        axios.post("https://crud-client-five.vercel.app/register", { name, email, password })
+        axios.post("http://localhost:3002/register", { name, email, password })
             .then(res => {
                 navigate('/login');
             })

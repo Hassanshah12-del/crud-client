@@ -7,7 +7,7 @@ const [suc,setSuc] = useState()
 const navigate =useNavigate()
 axios.defaults.withCredentials = true;
 useEffect(()=>{
-    axios.get("https://crud-client-five.vercel.app/dashboard")
+    axios.get("http://localhost:3002/dashboard")
     .then(res => {
        if(res.data === "Success"){
             setSuc("Success OK")

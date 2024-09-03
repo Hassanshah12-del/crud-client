@@ -13,7 +13,7 @@ const Chatbot = () => {
         setMessage('');
 
         try {
-            const response = await axios.post('https://crud-client-five.vercel.app/api/chatbot', { message });
+            const response = await axios.post('http://localhost:3002/api/chatbot', { message });
             setMessages([...newMessages, response.data.choices[0].message]);
         } catch (error) {
             console.error('Error sending message to chatbot:', error);

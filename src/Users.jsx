@@ -12,7 +12,7 @@ function Users() {
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete('https://crud-client-five.vercel.app/deleteUser/' + id)
+        axios.delete('http://localhost:3002/deleteUser/' + id)
             .then(res => {
                 console.log(res);
                 // Filter out the deleted user from the users array
@@ -41,7 +41,7 @@ function Users() {
                         <tr key={user._id}>
                             <td>
                                 <img 
-                                    src={"https://crud-client-five.vercel.app/"+user.image} 
+                                    src={"http://localhost:3002/"+user.image} 
                                     alt={`${user.name}'s avatar`} 
                                     width="50" 
                                     height="50" 
