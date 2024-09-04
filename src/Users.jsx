@@ -29,7 +29,6 @@ function Users() {
             <table border="1" cellPadding="10" cellSpacing="0">
                 <thead>
                     <tr>
-                        <th>Image</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Age</th>
@@ -39,14 +38,6 @@ function Users() {
                 <tbody>
                     {users.map((user) => (
                         <tr key={user._id}>
-                            <td>
-                                <img 
-                                    src={"https://crud-server-ashy.vercel.app/"+user.image} 
-                                    alt={`${user.name}'s avatar`} 
-                                    width="50" 
-                                    height="50" 
-                                />
-                            </td>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td>{user.age}</td>

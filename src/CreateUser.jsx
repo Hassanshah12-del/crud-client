@@ -6,7 +6,6 @@ function CreateUser() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
-    const [image, setImage] = useState(null); // New state for image
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
@@ -14,7 +13,7 @@ function CreateUser() {
         e.preventDefault();
 
         // Validate that all fields are filled
-        if (!name || !email || !age || !image) { // Include image in validation
+        if (!name || !email || !age ) { // Include image in validation
             setError("Please fill in all fields and upload an image.");
             return;
         }
@@ -35,7 +34,6 @@ function CreateUser() {
         formData.append('name', name);
         formData.append('email', email);
         formData.append('age', age);
-        formData.append('image', image); // Append image file
 
         axios.post("https://crud-server-ashy.vercel.app/createUser", formData, {
             headers: {
@@ -80,16 +78,6 @@ function CreateUser() {
                         <input
                             type="text"
                             onChange={(e) => setAge(e.target.value)}
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Image:
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => setImage(e.target.files[0])}
                         />
                     </label>
                 </div>

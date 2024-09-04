@@ -7,7 +7,6 @@ function UpdateUser() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
-    const [image, setImage] = useState(null); // New state for image
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,9 +26,6 @@ function UpdateUser() {
         formData.append('name', name);
         formData.append('email', email);
         formData.append('age', age);
-        if (image) {
-            formData.append('image', image); // Append image file if selected
-        }
 
         axios.put("https://crud-server-ashy.vercel.app/updateUser/" + id, formData, {
             headers: {
@@ -74,16 +70,6 @@ function UpdateUser() {
                             type="text"
                             value={age}
                             onChange={(e) => setAge(e.target.value)}
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Image:
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => setImage(e.target.files[0])}
                         />
                     </label>
                 </div>
