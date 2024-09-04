@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 
 function Users() {
     const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        axios.get('https://crud-server-ashy.vercel.app')
-            .then(result => setUsers(result.data))
-            .catch(err => console.log(err));
-    }, []);
-
+useEffect(() => {
+    axios.get('https://crud-server-ashy.vercel.app')
+        .then(result => {
+            console.log(result.data); // Check this in the browser console
+            setUsers(result.data);
+        })
+        .catch(err => console.log(err));
+}, []);
     const handleDelete = (id) => {
         axios.delete('https://crud-server-ashy.vercel.app/deleteUser/' + id)
             .then(res => {
