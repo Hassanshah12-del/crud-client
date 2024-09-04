@@ -11,7 +11,7 @@ function UpdateUser() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('https://crud-server-roan.vercel.app/getUser/' + id)
+        axios.get('https://crud-server-ashy.vercel.app/getUser/' + id)
             .then(result => {
                 console.log(result);
                 setName(result.data.name);
@@ -31,7 +31,7 @@ function UpdateUser() {
             formData.append('image', image); // Append image file if selected
         }
 
-        axios.put("https://crud-server-roan.vercel.app/updateUser/" + id, formData, {
+        axios.put("https://crud-server-ashy.vercel.app/updateUser/" + id, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

@@ -38,7 +38,7 @@ function Login() {
             return;
         }
 
-        axios.post("https://crud-server-roan.vercel.app/login", { email, password })
+        axios.post("https://crud-server-ashy.vercel.app/login", { email, password })
             .then(res => {
                 if (res.data.Status === "Success") {
                     if (res.data.role === "admin") {
